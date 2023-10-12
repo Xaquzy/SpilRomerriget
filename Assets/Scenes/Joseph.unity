@@ -445,10 +445,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cam: {fileID: 0}
   animator: {fileID: 0}
-  walkSpeed: 0
-  sprintSpeed: 0
-  jumpHeight: 0
-  gravity: 0
+  walkSpeed: 3
+  sprintSpeed: 3
+  jumpHeight: 3
+  gravity: -3
 --- !u!1 &963194225
 GameObject:
   m_ObjectHideFlags: 0
