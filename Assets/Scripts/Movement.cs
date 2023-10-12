@@ -11,7 +11,7 @@ public class Movement : MonoBehaviour
     float turnSmoothVelocity;
 
     //Animation
-    public Animator animator;
+    //public Animator animator;
 
     //Movement
     Vector2 movement;
@@ -25,6 +25,8 @@ public class Movement : MonoBehaviour
     bool isGrounded;
     Vector3 velocity;
     private int counter = 2;
+
+
 
 
     void Start()
@@ -96,21 +98,21 @@ public class Movement : MonoBehaviour
         //Animation - Walking
         if (direction.magnitude <= 0)
         {
-            animator.SetBool("IsWalking", false);
+            //animator.SetBool("IsWalking", false);
         }
         else
         {
-            animator.SetBool("IsWalking", true);
+            //animator.SetBool("IsWalking", true);
         }
 
         //Animation - Sprinting
         if (trueSpeed >= walkSpeed + 0.1f)
         {
-            animator.SetBool("IsSprinting", true);
+            //animator.SetBool("IsSprinting", true);
         }
         else
         {
-            animator.SetBool("IsSprinting", false);
+            //animator.SetBool("IsSprinting", false);
         }
 
     }
