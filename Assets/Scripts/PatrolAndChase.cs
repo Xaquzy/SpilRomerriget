@@ -60,7 +60,7 @@ public class PatrolAndChase : MonoBehaviour
         }
         if (state == State.AttackState)
         {
-            //Attack();
+            Attack();
         }
 
         if ((transform.position - targetPoint).magnitude < targetRadius)
@@ -152,8 +152,6 @@ public class PatrolAndChase : MonoBehaviour
         velocity.Normalize();
         velocity *= moveSpeed * Time.deltaTime;
         controller.Move(velocity);
-        float distanceToPlayeer =
-            (player.transform.position - transform.position).magnitude;
 
         distanceToPlayer = (transform.position - player.position).magnitude;
         if (distanceToPlayer < minChaseDistance)
@@ -173,6 +171,7 @@ public class PatrolAndChase : MonoBehaviour
         Vector3 lookDir = (lookAt - transform.position).normalized;
         transform.forward = lookDir;
 
+        distanceToPlayer = (transform.position - player.position).magnitude;
         Debug.Log(distanceToPlayer);
 
         if (distanceToPlayer > maxChaseDistance)
@@ -189,13 +188,7 @@ public class PatrolAndChase : MonoBehaviour
         {
         
         Debug.Log("Attacking");
-            Vector3 velocity = player.position - transform.position;
-            velocity.Normalize();
-            velocity *= moveSpeed * Time.deltaTime;
-            controller.Move(velocity);
-            Vector3 lookAt = player.position;
-            Vector3 lookDir = (lookAt - transform.position).normalized;
-            transform.forward = lookDir;
+            
 
         }
 
