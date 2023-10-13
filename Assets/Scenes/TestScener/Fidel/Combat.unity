@@ -1110,6 +1110,8 @@ GameObject:
   - component: {fileID: 1683403868}
   - component: {fileID: 1683403867}
   - component: {fileID: 1683403872}
+  - component: {fileID: 1683403875}
+  - component: {fileID: 1683403874}
   m_Layer: 0
   m_Name: AI
   m_TagString: Untagged
@@ -1254,6 +1256,44 @@ NavMeshAgent:
   m_BaseOffset: 1
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
+--- !u!114 &1683403874
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1683403866}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7cba72dbcb91b64479f09e159c926bdd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player: {fileID: 2048326271}
+  points:
+  - {fileID: 451760974}
+  - {fileID: 157085376}
+  moveSpeed: 3
+  targetRadius: 1
+  minChaseDistance: 5
+  maxChaseDistance: 10
+  timeToSpeedUp: 1
+  timeToRotate: 1
+--- !u!114 &1683403875
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1683403866}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0ebd528785f54b54fa3dc4af3c8893b4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player: {fileID: 2048326265}
+  visionRange: 10
+  visionConeAngle: 30
+  stateIndicator: {fileID: 0}
 --- !u!1 &1698347828
 GameObject:
   m_ObjectHideFlags: 0
