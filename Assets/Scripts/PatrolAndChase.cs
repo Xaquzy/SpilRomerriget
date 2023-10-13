@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 
@@ -28,6 +29,7 @@ public class PatrolAndChase : MonoBehaviour
     private Vector3 targetRotation;
     private float speedUpTimer;
     private float rotateTimer = 0f;
+   
 
 
 
@@ -53,6 +55,10 @@ public class PatrolAndChase : MonoBehaviour
         else if (state == State.ChaseState)
         {
             Chase();
+        }
+        else if (state == State.AttackState)
+        {
+            Attack();
         }
 
         if ((transform.position - targetPoint).magnitude < targetRadius)
@@ -85,13 +91,8 @@ public class PatrolAndChase : MonoBehaviour
     {
         if (state == State.PatrolState)
         {
-
-
-
             Vector3 lookAt = targetPoint;
             lookAt.y = transform.position.y;
-
-
 
             Vector3 lookDir = (lookAt - transform.position).normalized;
             transform.forward = lookDir;
@@ -100,6 +101,7 @@ public class PatrolAndChase : MonoBehaviour
         {
             Vector3 lookAt = player.transform.position;
         }
+
     }
 
     void SetRotation()
@@ -107,11 +109,12 @@ public class PatrolAndChase : MonoBehaviour
         if (rotateTimer < timeToRotate)
         {
             float t = rotateTimer / timeToRotate;
-            transform.forward = Vector3.Slerp(transform.forward, targetRotation, t);
-            rotateTimer = rotateTimer + Time.deltaTime;
-        }
+            transform.forward = Vector3.Slerp(oldRotation, targetRotation, t);
+            rotateTimer += Time.deltaTime;
 
+        }
     }
+
 
     void SetSpeed()
     {
@@ -126,6 +129,15 @@ public class PatrolAndChase : MonoBehaviour
             currentSpeed = moveSpeed;
         }
     }
+ 
+
+
+    enum State
+    {
+        PatrolState,
+        ChaseState,
+        AttackState
+    }
     void Patrol()
     {
         if ((transform.position - targetPoint).magnitude < targetRadius)
@@ -134,14 +146,10 @@ public class PatrolAndChase : MonoBehaviour
             LookAtTarget();
         }
 
-
-
         Vector3 velocity = targetPoint - transform.position;
         velocity.Normalize();
         velocity *= moveSpeed * Time.deltaTime;
         controller.Move(velocity);
-
-
 
         distanceToPlayer = (transform.position - player.position).magnitude;
         if (distanceToPlayer < minChaseDistance)
@@ -149,17 +157,8 @@ public class PatrolAndChase : MonoBehaviour
             state = State.ChaseState;
         }
 
-
-
     }
 
-
-
-    enum State
-    {
-        PatrolState,
-        ChaseState
-    }
     void Chase()
     {
         Vector3 velocity = player.position - transform.position;
@@ -178,6 +177,16 @@ public class PatrolAndChase : MonoBehaviour
         }
 
 
+        void Attack()
+        {
+            Vector3 velocity = player.position - transform.position;
+            velocity.Normalize();
+            velocity *= moveSpeed * Time.deltaTime;
+            controller.Move(velocity);
+            Vector3 lookAt = player.position;
+            Vector3 lookDir = (lookAt - transform.position).normalized;
+            transform.forward = lookDir;
+        }
 
     }
 }
