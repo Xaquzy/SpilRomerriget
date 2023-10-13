@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657874, g: 0.49641258, b: 0.5748172, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -122,7 +122,7 @@ NavMeshSettings:
     preserveTilesOutsideBounds: 0
     debug:
       m_Flags: 0
-  m_NavMeshData: {fileID: 0}
+  m_NavMeshData: {fileID: 23800000, guid: 355a5ea89e6f69c4c91db16e48f99e65, type: 2}
 --- !u!1 &157085372
 GameObject:
   m_ObjectHideFlags: 0
@@ -158,7 +158,7 @@ BoxCollider:
     m_Bits: 0
   m_LayerOverridePriority: 0
   m_IsTrigger: 0
-  m_ProvidesContacts: 0
+  m_ProvidesContacts: 1
   m_Enabled: 1
   serializedVersion: 3
   m_Size: {x: 1, y: 1, z: 1}
@@ -222,7 +222,7 @@ Transform:
   m_GameObject: {fileID: 157085372}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 4.3, y: 0.78, z: 4.98}
+  m_LocalPosition: {x: 12.5, y: 0.78, z: 10.7}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -368,7 +368,7 @@ BoxCollider:
     m_Bits: 0
   m_LayerOverridePriority: 0
   m_IsTrigger: 0
-  m_ProvidesContacts: 0
+  m_ProvidesContacts: 1
   m_Enabled: 1
   serializedVersion: 3
   m_Size: {x: 1, y: 1, z: 1}
@@ -432,7 +432,7 @@ Transform:
   m_GameObject: {fileID: 451760970}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -5.16, y: 0.78, z: 10.51}
+  m_LocalPosition: {x: -10.9, y: 0.78, z: 10.51}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -775,7 +775,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!64 &1197000376
 MeshCollider:
@@ -1226,7 +1226,7 @@ Transform:
   m_GameObject: {fileID: 1683403866}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 3.73, y: 0.78, z: 16}
+  m_LocalPosition: {x: 3.73, y: 0.78, z: 11.32}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -1243,10 +1243,10 @@ NavMeshAgent:
   m_Enabled: 1
   m_AgentTypeID: 0
   m_Radius: 0.5
-  m_Speed: 3.5
+  m_Speed: 2
   m_Acceleration: 8
   avoidancePriority: 50
-  m_AngularSpeed: 1200
+  m_AngularSpeed: 120
   m_StoppingDistance: 0.3
   m_AutoTraverseOffMeshLink: 1
   m_AutoBraking: 1
@@ -1272,9 +1272,10 @@ MonoBehaviour:
   - {fileID: 451760974}
   - {fileID: 157085376}
   moveSpeed: 3
-  targetRadius: 2
+  targetRadius: 1.5
   minChaseDistance: 5
   maxChaseDistance: 10
+  PlayerSpace: 2
   timeToSpeedUp: 1
   timeToRotate: 1
 --- !u!1 &1698347828
@@ -1312,7 +1313,7 @@ BoxCollider:
     m_Bits: 0
   m_LayerOverridePriority: 0
   m_IsTrigger: 0
-  m_ProvidesContacts: 0
+  m_ProvidesContacts: 1
   m_Enabled: 1
   serializedVersion: 3
   m_Size: {x: 1, y: 1, z: 1}
@@ -1415,7 +1416,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1ceccc89857b4c948b774b90044e163a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cam: {fileID: 1350829578}
+  mainCam: {fileID: 1350829578}
   walkSpeed: 3
   sprintSpeed: 6
   jumpHeight: 3
@@ -1542,8 +1543,8 @@ SceneRoots:
   - {fileID: 608371592}
   - {fileID: 917259852}
   - {fileID: 2048326271}
-  - {fileID: 1683403871}
   - {fileID: 1698347832}
   - {fileID: 451760974}
   - {fileID: 157085376}
   - {fileID: 1197000379}
+  - {fileID: 1683403871}
