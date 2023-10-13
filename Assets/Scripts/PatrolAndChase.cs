@@ -60,7 +60,7 @@ public class PatrolAndChase : MonoBehaviour
         }
         if (state == State.AttackState)
         {
-            Attack();
+            //Attack();
         }
 
         if ((transform.position - targetPoint).magnitude < targetRadius)
