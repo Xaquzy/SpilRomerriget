@@ -23,7 +23,7 @@ public class POVchange : MonoBehaviour
         else
         {
             MainCamera.enabled = true;
-            Thirdcamera.enabled = true;
+            Thirdcamera.enabled = false;
         }
     }
 
