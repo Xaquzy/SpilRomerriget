@@ -183,6 +183,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: 93e08e672a324481f84f4aaa772b6165, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 2b31f114c1cb143ce9ebb0a34983c288, type: 2}
     - target: {fileID: 919132149155446097, guid: 93e08e672a324481f84f4aaa772b6165, type: 3}
       propertyPath: m_Name
       value: drageniveau
@@ -346,6 +350,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: 20d833a1144ef45b39b372151ecea529, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: c55f3221eaefb4bd4b12f00aad99e1dd, type: 2}
+    - target: {fileID: -7511558181221131132, guid: 20d833a1144ef45b39b372151ecea529, type: 3}
+      propertyPath: m_Materials.Array.data[1]
+      value: 
+      objectReference: {fileID: 2100000, guid: c55f3221eaefb4bd4b12f00aad99e1dd, type: 2}
     - target: {fileID: 919132149155446097, guid: 20d833a1144ef45b39b372151ecea529, type: 3}
       propertyPath: m_Name
       value: drage
@@ -415,6 +427,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: 169c52dccea184ecfa3c845c6a0a6274, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 1f38d65a2cf2a41749f6a68770b5c613, type: 2}
     - target: {fileID: 919132149155446097, guid: 169c52dccea184ecfa3c845c6a0a6274, type: 3}
       propertyPath: m_Name
       value: lowpoly gladiator Main
