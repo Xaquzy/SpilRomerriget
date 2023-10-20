@@ -5,15 +5,15 @@ using UnityEngine;
 
 
 
-public class PatrolAndChase : MonoBehaviour
+public class AiBehaviour : MonoBehaviour
 {
+    //Definitioner
     [SerializeField] private Transform player;
     [SerializeField] private Transform[] points;
     [SerializeField] private float moveSpeed = 3;
     [SerializeField] private float targetRadius = 0.1f;
-    [SerializeField] private float minChaseDistance;
     [SerializeField] private float maxChaseDistance;
-    [SerializeField] private float PlayerSpace;
+    [SerializeField] private float attackRange;
 
     private int indexOfTarget;
     private Vector3 targetPoint;
@@ -22,7 +22,7 @@ public class PatrolAndChase : MonoBehaviour
     private CharacterController controller;
 
 
-    //Smooth patrol
+    //Definitioner - Smooth patrol ?
     [SerializeField] private float timeToSpeedUp;
     [SerializeField] private float timeToRotate;
     private float currentSpeed = 3;
@@ -70,16 +70,16 @@ public class PatrolAndChase : MonoBehaviour
             speedUpTimer = 0f;
         }
 
-
         SetRotation();
         SetSpeed();
         Vector3 velocity = targetPoint - transform.position;
         velocity.Normalize();
         velocity *= currentSpeed * Time.deltaTime;
         controller.Move(velocity);
-
-
     }
+
+
+
     void NextTarget()
     {
         indexOfTarget = (indexOfTarget + 1) % points.Length;
@@ -142,6 +142,7 @@ public class PatrolAndChase : MonoBehaviour
     }
     void Patrol()
     {
+        Debug.Log("Patrolling");
         if ((transform.position - targetPoint).magnitude < targetRadius)
         {
             NextTarget();
@@ -154,15 +155,17 @@ public class PatrolAndChase : MonoBehaviour
         controller.Move(velocity);
 
         distanceToPlayer = (transform.position - player.position).magnitude;
-        if (distanceToPlayer < minChaseDistance)
+        if (distanceToPlayer < maxChaseDistance)
         {
             state = State.ChaseState;
         }
 
     }
 
+    // Chase funktion
     void Chase()
     {
+        Debug.Log("Chasing");
         Vector3 velocity = player.position - transform.position;
         velocity.Normalize();
         velocity *= moveSpeed * Time.deltaTime;
@@ -179,17 +182,22 @@ public class PatrolAndChase : MonoBehaviour
             state = State.PatrolState;
         }
 
-        if (distanceToPlayer <= PlayerSpace)
+        if (distanceToPlayer < attackRange)
         {
             state = State.AttackState;
         }
+
+       
     }
     void Attack()
         {
-        
         Debug.Log("Attacking");
-            
 
+        distanceToPlayer = (transform.position - player.position).magnitude;
+        if (distanceToPlayer > attackRange)
+        {
+            state = State.ChaseState;
         }
+    }
 
 }
