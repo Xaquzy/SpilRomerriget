@@ -2,11 +2,11 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Healthbartestscript : MonoBehaviour
+public class HealthbarAI : MonoBehaviour
 {
     public int maxHealth = 4;
     public int currentHealth;
-    public Healthbar healthbar;
+    public HealthbarCanvas healthbar;
     // Start is called before the first frame update
     void Start()
     {

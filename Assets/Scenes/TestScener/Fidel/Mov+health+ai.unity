@@ -1439,6 +1439,7 @@ MonoBehaviour:
   targetRadius: 1.5
   minChaseDistance: 5
   maxChaseDistance: 10
+  PlayerSpace: 0
   timeToSpeedUp: 1
   timeToRotate: 1
 --- !u!114 &1683403875
