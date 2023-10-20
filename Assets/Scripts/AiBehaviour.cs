@@ -14,11 +14,11 @@ public class AiBehaviour : MonoBehaviour
     [SerializeField] private float moveSpeed = 3;
     [SerializeField] private float targetRadius = 0.1f;
     [SerializeField] private float maxChaseDistance;
-    [SerializeField] private float attackRange;
+    [SerializeField] public float attackRange;
 
     private int indexOfTarget;
     private Vector3 targetPoint;
-    public float distanceToPlayer;
+    private float distanceToPlayer;
     private State state = State.PatrolState;
     private CharacterController controller;
 
@@ -76,6 +76,8 @@ public class AiBehaviour : MonoBehaviour
         velocity.Normalize();
         velocity *= currentSpeed * Time.deltaTime;
         controller.Move(velocity);
+
+      
     }
 
 
