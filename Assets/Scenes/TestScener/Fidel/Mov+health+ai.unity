@@ -503,7 +503,7 @@ Transform:
   m_GameObject: {fileID: 459314290}
   serializedVersion: 2
   m_LocalRotation: {x: -0.08717229, y: 0.89959055, z: -0.21045254, w: -0.3726226}
-  m_LocalPosition: {x: 0.25, y: 0.45000005, z: -11.73}
+  m_LocalPosition: {x: 0.25, y: 0.45000005, z: -28.59}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -1159,7 +1159,7 @@ Transform:
   m_GameObject: {fileID: 1350829577}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.25, y: 0.45000005, z: -11.73}
+  m_LocalPosition: {x: 0.25, y: 0.45000005, z: -28.59}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1437,9 +1437,9 @@ MonoBehaviour:
   - {fileID: 157085376}
   moveSpeed: 3
   targetRadius: 1.5
-  minChaseDistance: 5
-  maxChaseDistance: 10
-  PlayerSpace: 0
+  maxChaseDistance: 20
+  attackRange: 6
+  distanceToPlayer: 0
   timeToSpeedUp: 1
   timeToRotate: 1
 --- !u!114 &1683403875
@@ -1454,9 +1454,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1b63a0c69b978444297113ff892bd870, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealth: 4
+  maxHealth: 5
+  damage: 1
   currentHealth: 0
   healthbar: {fileID: 486337429}
+  player: {fileID: 2048326271}
+  AI: {fileID: 1683403871}
+  PlayerAttackRange: 10
 --- !u!1 &1698347828
 GameObject:
   m_ObjectHideFlags: 0
@@ -1813,7 +1817,7 @@ Transform:
   m_GameObject: {fileID: 2048326265}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.78, z: 0}
+  m_LocalPosition: {x: 0, y: 0.78, z: -16.86}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:

@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.AI;
 
 
 
@@ -17,7 +18,7 @@ public class AiBehaviour : MonoBehaviour
 
     private int indexOfTarget;
     private Vector3 targetPoint;
-    private float distanceToPlayer;
+    public float distanceToPlayer;
     private State state = State.PatrolState;
     private CharacterController controller;
 
@@ -30,9 +31,8 @@ public class AiBehaviour : MonoBehaviour
     private Vector3 targetRotation;
     private float speedUpTimer;
     private float rotateTimer = 0f;
-
-
     private bool InAttackRange;
+ 
 
 
 
@@ -143,6 +143,8 @@ public class AiBehaviour : MonoBehaviour
     void Patrol()
     {
         Debug.Log("Patrolling");
+
+
         if ((transform.position - targetPoint).magnitude < targetRadius)
         {
             NextTarget();
@@ -166,6 +168,7 @@ public class AiBehaviour : MonoBehaviour
     void Chase()
     {
         Debug.Log("Chasing");
+
         Vector3 velocity = player.position - transform.position;
         velocity.Normalize();
         velocity *= moveSpeed * Time.deltaTime;
@@ -192,6 +195,8 @@ public class AiBehaviour : MonoBehaviour
     void Attack()
         {
         Debug.Log("Attacking");
+
+        //Selve attack funktionen
 
         distanceToPlayer = (transform.position - player.position).magnitude;
         if (distanceToPlayer > attackRange)
