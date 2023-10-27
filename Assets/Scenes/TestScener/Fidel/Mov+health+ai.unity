@@ -1756,7 +1756,6 @@ MonoBehaviour:
   targetRadius: 1.5
   maxChaseDistance: 20
   attackRange: 6
-  distanceToPlayer: 0
   timeToSpeedUp: 1
   timeToRotate: 1
 --- !u!114 &1683403875
@@ -1777,7 +1776,7 @@ MonoBehaviour:
   healthbar: {fileID: 486337429}
   player: {fileID: 2048326271}
   AI: {fileID: 1683403871}
-  PlayerAttackRange: 10
+  PlayerAttackRange: 4
 --- !u!1 &1694924595
 GameObject:
   m_ObjectHideFlags: 0
