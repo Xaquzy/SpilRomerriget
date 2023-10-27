@@ -760,8 +760,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxHealth: 4
+  damage: 1
   currentHealth: 0
   healthbar: {fileID: 633530381}
+  player: {fileID: 808469476}
+  AI: {fileID: 877466795}
+  OppositionAttackRange: 0
 --- !u!1 &877466791
 GameObject:
   m_ObjectHideFlags: 0

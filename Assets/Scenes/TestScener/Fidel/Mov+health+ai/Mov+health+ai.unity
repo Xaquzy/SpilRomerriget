@@ -122,7 +122,7 @@ NavMeshSettings:
     preserveTilesOutsideBounds: 0
     debug:
       m_Flags: 0
-  m_NavMeshData: {fileID: 23800000, guid: 355a5ea89e6f69c4c91db16e48f99e65, type: 2}
+  m_NavMeshData: {fileID: 23800000, guid: ded053c2e11ffa64286bdfef7f2716f4, type: 2}
 --- !u!1 &157085372
 GameObject:
   m_ObjectHideFlags: 0
@@ -135,6 +135,7 @@ GameObject:
   - component: {fileID: 157085375}
   - component: {fileID: 157085374}
   - component: {fileID: 157085373}
+  - component: {fileID: 157085377}
   m_Layer: 0
   m_Name: Obstacle 3
   m_TagString: Untagged
@@ -228,6 +229,22 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!208 &157085377
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 157085372}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 0.5, y: 0.5, z: 0.5}
+  m_MoveThreshold: 0.1
+  m_Carve: 0
+  m_CarveOnlyStationary: 1
+  m_Center: {x: 0, y: 0, z: 0}
+  m_TimeToStationary: 0.5
 --- !u!1 &177311586
 GameObject:
   m_ObjectHideFlags: 0
@@ -377,6 +394,7 @@ GameObject:
   - component: {fileID: 451760973}
   - component: {fileID: 451760972}
   - component: {fileID: 451760971}
+  - component: {fileID: 451760975}
   m_Layer: 0
   m_Name: Obstacle 2
   m_TagString: Untagged
@@ -470,6 +488,22 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!208 &451760975
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 451760970}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 0.5, y: 0.5, z: 0.5}
+  m_MoveThreshold: 0.1
+  m_Carve: 0
+  m_CarveOnlyStationary: 1
+  m_Center: {x: 0, y: 0, z: 0}
+  m_TimeToStationary: 0.5
 --- !u!1 &459314290
 GameObject:
   m_ObjectHideFlags: 0
@@ -1588,9 +1622,9 @@ GameObject:
   - component: {fileID: 1683403869}
   - component: {fileID: 1683403868}
   - component: {fileID: 1683403867}
-  - component: {fileID: 1683403872}
   - component: {fileID: 1683403874}
   - component: {fileID: 1683403875}
+  - component: {fileID: 1683403876}
   m_Layer: 0
   m_Name: AI
   m_TagString: Untagged
@@ -1714,28 +1748,6 @@ Transform:
   - {fileID: 486337430}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!195 &1683403872
-NavMeshAgent:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1683403866}
-  m_Enabled: 1
-  m_AgentTypeID: 0
-  m_Radius: 0.5
-  m_Speed: 2
-  m_Acceleration: 8
-  avoidancePriority: 50
-  m_AngularSpeed: 120
-  m_StoppingDistance: 0.3
-  m_AutoTraverseOffMeshLink: 1
-  m_AutoBraking: 1
-  m_AutoRepath: 1
-  m_Height: 2
-  m_BaseOffset: 1
-  m_WalkableMask: 4294967295
-  m_ObstacleAvoidanceType: 4
 --- !u!114 &1683403874
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1749,12 +1761,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 2048326271}
+  AI: {fileID: 1683403876}
   points:
   - {fileID: 451760974}
   - {fileID: 157085376}
-  moveSpeed: 3
+  moveSpeed: 6
   targetRadius: 1.5
-  maxChaseDistance: 20
+  maxChaseDistance: 15
   attackRange: 6
   timeToSpeedUp: 1
   timeToRotate: 1
@@ -1777,6 +1790,28 @@ MonoBehaviour:
   player: {fileID: 2048326271}
   AI: {fileID: 1683403871}
   OppositionAttackRange: 5
+--- !u!195 &1683403876
+NavMeshAgent:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1683403866}
+  m_Enabled: 1
+  m_AgentTypeID: 0
+  m_Radius: 0.5
+  m_Speed: 3.5
+  m_Acceleration: 8
+  avoidancePriority: 50
+  m_AngularSpeed: 120
+  m_StoppingDistance: 2
+  m_AutoTraverseOffMeshLink: 1
+  m_AutoBraking: 1
+  m_AutoRepath: 1
+  m_Height: 2
+  m_BaseOffset: 1
+  m_WalkableMask: 4294967295
+  m_ObstacleAvoidanceType: 4
 --- !u!1 &1694924595
 GameObject:
   m_ObjectHideFlags: 0
@@ -1891,6 +1926,7 @@ GameObject:
   - component: {fileID: 1698347831}
   - component: {fileID: 1698347830}
   - component: {fileID: 1698347829}
+  - component: {fileID: 1698347833}
   m_Layer: 0
   m_Name: Obstacle 1
   m_TagString: Untagged
@@ -1984,6 +2020,22 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!208 &1698347833
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1698347828}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 0.5, y: 0.5, z: 0.5}
+  m_MoveThreshold: 0.1
+  m_Carve: 0
+  m_CarveOnlyStationary: 1
+  m_Center: {x: 0, y: 0, z: 0}
+  m_TimeToStationary: 0.5
 --- !u!1 &2048326265
 GameObject:
   m_ObjectHideFlags: 0

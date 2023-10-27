@@ -10,6 +10,7 @@ public class AiBehaviour : MonoBehaviour
 {
     //Definitioner
     [SerializeField] private Transform player;
+    public NavMeshAgent AI;
     [SerializeField] private Transform[] points;
     [SerializeField] private float moveSpeed = 3;
     [SerializeField] private float targetRadius = 0.1f;
@@ -21,9 +22,6 @@ public class AiBehaviour : MonoBehaviour
     private float distanceToPlayer;
     private State state = State.PatrolState;
     private CharacterController controller;
-
-
-    //Definitioner - Smooth patrol ?
     [SerializeField] private float timeToSpeedUp;
     [SerializeField] private float timeToRotate;
     private float currentSpeed = 3;
@@ -32,6 +30,7 @@ public class AiBehaviour : MonoBehaviour
     private float speedUpTimer;
     private float rotateTimer = 0f;
     private bool InAttackRange;
+    
  
 
 
@@ -63,19 +62,14 @@ public class AiBehaviour : MonoBehaviour
             Attack();
         }
 
-        if ((transform.position - targetPoint).magnitude < targetRadius)
+       if ((transform.position - targetPoint).magnitude < targetRadius)
         { 
             NextTarget();
             LookAtTarget();
             speedUpTimer = 0f;
         }
 
-        SetRotation();
-        SetSpeed();
-        Vector3 velocity = targetPoint - transform.position;
-        velocity.Normalize();
-        velocity *= currentSpeed * Time.deltaTime;
-        controller.Move(velocity);
+       
 
       
     }
@@ -153,12 +147,17 @@ public class AiBehaviour : MonoBehaviour
             LookAtTarget();
         }
 
+
         Vector3 velocity = targetPoint - transform.position;
         velocity.Normalize();
         velocity *= moveSpeed * Time.deltaTime;
         controller.Move(velocity);
 
-        distanceToPlayer = (transform.position - player.position).magnitude;
+        SetRotation();
+        SetSpeed();
+
+
+        distanceToPlayer = (AI.transform.position - player.position).magnitude;
         if (distanceToPlayer < maxChaseDistance)
         {
             state = State.ChaseState;
@@ -171,17 +170,9 @@ public class AiBehaviour : MonoBehaviour
     {
         Debug.Log("Chasing");
 
-        Vector3 velocity = player.position - transform.position;
-        velocity.Normalize();
-        velocity *= moveSpeed * Time.deltaTime;
-        controller.Move(velocity);
-        Vector3 lookAt = player.position;
-        Vector3 lookDir = (lookAt - transform.position).normalized;
-        transform.forward = lookDir;
-
-        distanceToPlayer = (transform.position - player.position).magnitude;
-        Debug.Log(distanceToPlayer);
-
+        AI.SetDestination(player.position);
+        
+        distanceToPlayer = (AI.transform.position - player.position).magnitude;
         if (distanceToPlayer > maxChaseDistance)
         {
             state = State.PatrolState;
@@ -198,9 +189,10 @@ public class AiBehaviour : MonoBehaviour
         {
         Debug.Log("Attacking");
 
-        //Selve attack funktionen
+        //Selve attack funktionen - Gjort i HealthbarAI script
+        AI.SetDestination(player.position);
 
-        distanceToPlayer = (transform.position - player.position).magnitude;
+        distanceToPlayer = (AI.transform.position - player.position).magnitude;
         if (distanceToPlayer > attackRange)
         {
             state = State.ChaseState;
