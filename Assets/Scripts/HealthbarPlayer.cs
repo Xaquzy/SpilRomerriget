@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class HealthbarAI : MonoBehaviour
+public class HealthbarPlayer : MonoBehaviour
 {
     public int maxHealth = 4;
     public int damage = 1;
@@ -12,6 +12,8 @@ public class HealthbarAI : MonoBehaviour
     [SerializeField] private Transform AI;
     [SerializeField] public float OppositionAttackRange;
     private float distanceToOther;
+    private float time = 0.0f;
+    public float AttackFrekvens = 0.5f;
     // Start is called before the first frame update
     void Start()
     {
@@ -31,14 +33,14 @@ public class HealthbarAI : MonoBehaviour
     {
 
         distanceToOther = Mathf.Abs((AI.position - player.position).magnitude);
-        if (Input.GetKeyUp(KeyCode.L))
+        time = time + Time.deltaTime;
+        if (distanceToOther < OppositionAttackRange)
         {
-            if (distanceToOther < OppositionAttackRange)
+            if (time >= AttackFrekvens)
             {
-                {
-                    currentHealth = currentHealth - damage;
-                    healthbar.SetHealth(currentHealth);
-                }
+                time = 0.0f;
+                currentHealth = currentHealth - damage;
+                healthbar.SetHealth(currentHealth);
             }
         }
     }

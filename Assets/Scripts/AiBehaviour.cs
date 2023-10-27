@@ -194,7 +194,7 @@ public class AiBehaviour : MonoBehaviour
 
        
     }
-    void Attack()
+    public void Attack()
         {
         Debug.Log("Attacking");
 
