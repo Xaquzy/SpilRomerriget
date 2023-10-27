@@ -1648,7 +1648,7 @@ CapsuleCollider:
     m_Bits: 0
   m_LayerOverridePriority: 0
   m_IsTrigger: 0
-  m_ProvidesContacts: 0
+  m_ProvidesContacts: 1
   m_Enabled: 1
   serializedVersion: 2
   m_Radius: 0.5
@@ -1765,9 +1765,9 @@ MonoBehaviour:
   points:
   - {fileID: 451760974}
   - {fileID: 157085376}
-  moveSpeed: 6
-  targetRadius: 1.5
-  maxChaseDistance: 15
+  moveSpeed: 2
+  targetRadius: 2
+  maxChaseDistance: 17
   attackRange: 6
   timeToSpeedUp: 1
   timeToRotate: 1
@@ -1800,7 +1800,7 @@ NavMeshAgent:
   m_Enabled: 1
   m_AgentTypeID: 0
   m_Radius: 0.5
-  m_Speed: 3.5
+  m_Speed: 4
   m_Acceleration: 8
   avoidancePriority: 50
   m_AngularSpeed: 120
@@ -2073,7 +2073,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   mainCam: {fileID: 1350829578}
   walkSpeed: 3
-  sprintSpeed: 6
+  sprintSpeed: 10
   jumpHeight: 3
   gravity: -3
 --- !u!136 &2048326267
@@ -2092,7 +2092,7 @@ CapsuleCollider:
     m_Bits: 0
   m_LayerOverridePriority: 0
   m_IsTrigger: 0
-  m_ProvidesContacts: 0
+  m_ProvidesContacts: 1
   m_Enabled: 1
   serializedVersion: 2
   m_Radius: 0.5

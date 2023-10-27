@@ -38,10 +38,11 @@ public class AiBehaviour : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        LookAtTarget();
         controller = GetComponent<CharacterController>();
         indexOfTarget = -1;
         NextTarget();
-        LookAtTarget();
+ 
     }
 
 
