@@ -141,6 +141,8 @@ public class AiBehaviour : MonoBehaviour
         Debug.Log("Patrolling");
 
 
+        LookAtTarget();
+
         if ((transform.position - targetPoint).magnitude < targetRadius)
         {
             NextTarget();
