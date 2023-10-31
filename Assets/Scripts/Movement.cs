@@ -15,13 +15,13 @@ public class Movement : MonoBehaviour
 
     //Movement
     Vector2 movement;
-    public float walkSpeed;
-    public float sprintSpeed;
+    public float walkSpeed = 4;
+    public float sprintSpeed = 6;
     float trueSpeed;
 
     //Jumping
-    public float jumpHeight;
-    public float gravity;
+    public float jumpHeight = 1;
+    public float gravity = (int)9.82;
     bool isGrounded;
     Vector3 velocity;
     private int counter = 2;
