@@ -193,7 +193,7 @@ public class AiBehaviour : MonoBehaviour
         Debug.Log("Attacking");
 
         //Selve attack funktionen - Gjort i HealthbarAI script
-        AI.SetDestination(player.position);
+        AI.SetDestination(player.transform.position);
 
         distanceToPlayer = (AI.transform.position - player.position).magnitude;
         if (distanceToPlayer > attackRange)
