@@ -754,8 +754,8 @@ MonoBehaviour:
   m_StreamingVersion: 20170927
   m_Priority: 10
   m_StandbyUpdate: 2
-  m_LookAt: {fileID: 0}
-  m_Follow: {fileID: 0}
+  m_LookAt: {fileID: 931978208}
+  m_Follow: {fileID: 343463623}
   m_CommonLens: 1
   m_Lens:
     FieldOfView: 40
@@ -926,6 +926,11 @@ PrefabInstance:
       insertIndex: -1
       addedObject: {fileID: 1293752369}
   m_SourcePrefab: {fileID: 100100000, guid: 28390e31e6d7f48028a256e99a4c0470, type: 3}
+--- !u!4 &343463623 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: -1041700367749053021, guid: 28390e31e6d7f48028a256e99a4c0470, type: 3}
+  m_PrefabInstance: {fileID: 343463622}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &366363290
 GameObject:
   m_ObjectHideFlags: 0
