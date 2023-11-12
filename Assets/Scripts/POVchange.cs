@@ -4,8 +4,9 @@ using UnityEngine;
 
 public class POVchange : MonoBehaviour
 {
-    public GameObject MainCamera;
+    public GameObject FirstCamera;
     public GameObject ThirdCamera;
+
     void Start()
     {
         
@@ -14,7 +15,7 @@ public class POVchange : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.P))
         {
-            MainCamera.SetActive(!MainCamera.activeSelf);
+            FirstCamera.SetActive(!FirstCamera.activeSelf);
             ThirdCamera.SetActive(!ThirdCamera.activeSelf);
         }
     }
