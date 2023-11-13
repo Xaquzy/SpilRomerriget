@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657874, g: 0.49641258, b: 0.5748172, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657844, g: 0.49641222, b: 0.57481676, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -2876,6 +2876,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: "BedreL\xF8ve"
       objectReference: {fileID: 0}
+    - target: {fileID: 3772463082409074777, guid: f063760bfeba54881a9c997550f3ccd8, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: a7946bf4e92a94e879583337dfa0f583, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects:
@@ -3345,10 +3349,26 @@ PrefabInstance:
       propertyPath: m_ConstrainProportionsScale
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: -5180936377873287342, guid: 383afe927f2d84c71916a1ae8336f059, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: a7946bf4e92a94e879583337dfa0f583, type: 2}
+    - target: {fileID: -4700102426900244497, guid: 383afe927f2d84c71916a1ae8336f059, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: a7946bf4e92a94e879583337dfa0f583, type: 2}
+    - target: {fileID: -3646752504901253806, guid: 383afe927f2d84c71916a1ae8336f059, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: a7946bf4e92a94e879583337dfa0f583, type: 2}
     - target: {fileID: 919132149155446097, guid: 383afe927f2d84c71916a1ae8336f059, type: 3}
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 3769860662856582951, guid: 383afe927f2d84c71916a1ae8336f059, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: a7946bf4e92a94e879583337dfa0f583, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects:
