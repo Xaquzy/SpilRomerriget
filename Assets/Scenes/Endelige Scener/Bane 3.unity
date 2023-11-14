@@ -483,7 +483,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: db512209dfd4d4f52882c2ae03730525, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -70.85391
+      value: -96.5
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: db512209dfd4d4f52882c2ae03730525, type: 3}
       propertyPath: m_LocalPosition.y
@@ -491,7 +491,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: db512209dfd4d4f52882c2ae03730525, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 5.649231
+      value: -25.4
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: db512209dfd4d4f52882c2ae03730525, type: 3}
       propertyPath: m_LocalRotation.w
@@ -832,7 +832,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_BindingMode: 5
-  m_FollowOffset: {x: 0, y: 7.660456, z: -16.85739}
+  m_FollowOffset: {x: 0, y: 9.358947, z: -20.17067}
   m_XDamping: 1
   m_YDamping: 1
   m_ZDamping: 1
@@ -1260,7 +1260,7 @@ MonoBehaviour:
   healthbar: {fileID: 1609527316}
   player: {fileID: 402486696}
   AI: {fileID: 990118178}
-  OppositionAttackRange: 10
+  OppositionAttackRange: 17.5
   AttackFrekvens: 1
   NpcAnimator: {fileID: 990118173}
 --- !u!114 &402486694
@@ -1386,7 +1386,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_BindingMode: 5
-  m_FollowOffset: {x: 0, y: 7.660456, z: -16.85739}
+  m_FollowOffset: {x: 0, y: 9.358947, z: -20.17067}
   m_XDamping: 1
   m_YDamping: 1
   m_ZDamping: 1
@@ -1910,7 +1910,7 @@ MonoBehaviour:
   moveSpeed: 10
   targetRadius: 15
   maxChaseDistance: 50
-  attackRange: 10
+  attackRange: 17.5
   timeToSpeedUp: 1
   timeToRotate: 1
 --- !u!4 &990118178 stripped
@@ -2255,7 +2255,7 @@ Transform:
   m_GameObject: {fileID: 1208076510}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -70.695114, y: -12.322608, z: -6.1233687}
+  m_LocalPosition: {x: -96.3412, y: -12.322608, z: -37.1726}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -3430,7 +3430,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_BindingMode: 5
-  m_FollowOffset: {x: 0, y: 7.660456, z: -16.85739}
+  m_FollowOffset: {x: 0, y: 9.358947, z: -20.17067}
   m_XDamping: 1
   m_YDamping: 1
   m_ZDamping: 1
@@ -3548,7 +3548,7 @@ Transform:
   m_GameObject: {fileID: 1807281966}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -70.695114, y: -12.322608, z: -6.1233687}
+  m_LocalPosition: {x: -96.3412, y: -12.322608, z: -37.1726}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
