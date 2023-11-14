@@ -832,7 +832,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_BindingMode: 5
-  m_FollowOffset: {x: 0, y: 9.358947, z: -20.17067}
+  m_FollowOffset: {x: 0, y: 9.72628, z: -20.65626}
   m_XDamping: 1
   m_YDamping: 1
   m_ZDamping: 1
@@ -1260,7 +1260,7 @@ MonoBehaviour:
   healthbar: {fileID: 1609527316}
   player: {fileID: 402486696}
   AI: {fileID: 990118178}
-  OppositionAttackRange: 17.5
+  OppositionAttackRange: 20
   AttackFrekvens: 1
   NpcAnimator: {fileID: 990118173}
 --- !u!114 &402486694
@@ -1386,7 +1386,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_BindingMode: 5
-  m_FollowOffset: {x: 0, y: 9.358947, z: -20.17067}
+  m_FollowOffset: {x: 0, y: 9.72628, z: -20.65626}
   m_XDamping: 1
   m_YDamping: 1
   m_ZDamping: 1
@@ -1910,7 +1910,7 @@ MonoBehaviour:
   moveSpeed: 10
   targetRadius: 15
   maxChaseDistance: 50
-  attackRange: 17.5
+  attackRange: 20
   timeToSpeedUp: 1
   timeToRotate: 1
 --- !u!4 &990118178 stripped
@@ -3430,7 +3430,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_BindingMode: 5
-  m_FollowOffset: {x: 0, y: 9.358947, z: -20.17067}
+  m_FollowOffset: {x: 0, y: 9.72628, z: -20.65626}
   m_XDamping: 1
   m_YDamping: 1
   m_ZDamping: 1
