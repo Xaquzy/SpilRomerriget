@@ -2799,7 +2799,7 @@ MonoBehaviour:
   healthbar: {fileID: 931179787}
   player: {fileID: 1651521615}
   AI: {fileID: 1552736455}
-  OppositionAttackRange: 3
+  OppositionAttackRange: 3.5
   PlayerAnimator: {fileID: 0}
 --- !u!114 &1552736454
 MonoBehaviour:
@@ -2820,8 +2820,8 @@ MonoBehaviour:
   - {fileID: 1493947802}
   moveSpeed: 2
   targetRadius: 3
-  maxChaseDistance: 10
-  attackRange: 4
+  maxChaseDistance: 8
+  attackRange: 3.5
   timeToSpeedUp: 1
   timeToRotate: 1
 --- !u!4 &1552736455 stripped
@@ -3271,9 +3271,9 @@ MonoBehaviour:
   healthbar: {fileID: 1566779838}
   player: {fileID: 1651521615}
   AI: {fileID: 1552736455}
-  OppositionAttackRange: 2
-  AttackFrekvens: 3
-  AiBehaviour: {fileID: 0}
+  OppositionAttackRange: 3.5
+  DistanceToPlayerDuringAttack: 1
+  AttackFrekvens: 2
   NpcAnimator: {fileID: 1552736457}
 --- !u!114 &1651521617
 MonoBehaviour:
