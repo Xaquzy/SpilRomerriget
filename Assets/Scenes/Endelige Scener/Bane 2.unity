@@ -2545,7 +2545,6 @@ MonoBehaviour:
   OppositionAttackRange: 3.5
   AttackFrekvens: 2
   NpcAnimator: {fileID: 1552736457}
-  NpcAlive: {fileID: 0}
 --- !u!114 &1287481399
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3141,7 +3140,6 @@ MonoBehaviour:
   OppositionAttackRange: 3.5
   PlayerAnimator: {fileID: 1287481401}
   NpcAnimator: {fileID: 1552736457}
-  NpcAlive: 0
 --- !u!114 &1552736454
 MonoBehaviour:
   m_ObjectHideFlags: 0

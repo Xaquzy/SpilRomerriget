@@ -17,8 +17,6 @@ public class HealthbarPlayer : MonoBehaviour
     private float time = 0.0f;
     public float AttackFrekvens = 0.5f;
     public Animator NpcAnimator;
-    public GameObject NpcAlive;
-    private bool yy;
     // Start is called before the first frame update
 
 

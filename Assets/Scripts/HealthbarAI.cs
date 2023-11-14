@@ -14,7 +14,6 @@ public class HealthbarAI : MonoBehaviour
     private float distanceToOther;
     public Animator PlayerAnimator;
     public Animator NpcAnimator;
-    public bool NpcAlive;
 
     // Start is called before the first frame update
     void Start()
