@@ -16,7 +16,7 @@ public class HealthbarCanvas : MonoBehaviour
 
         fill.color = gradient.Evaluate(1f);
     }
-    public void SetHealth(int  health)
+    public void SetHealth(int health)
     {
         healthBar.value = health;
         fill.color = gradient.Evaluate(healthBar.normalizedValue);

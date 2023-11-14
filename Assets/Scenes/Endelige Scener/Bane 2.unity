@@ -739,7 +739,7 @@ Transform:
   m_GameObject: {fileID: 459314290}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -8.1004, y: 0.70580196, z: 26.225801}
+  m_LocalPosition: {x: -7.4203997, y: 0.70580196, z: 26.225801}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -1098,7 +1098,7 @@ Transform:
   m_GameObject: {fileID: 660645129}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -8.1004, y: 0.70580196, z: 26.225801}
+  m_LocalPosition: {x: -7.4203997, y: 0.70580196, z: 26.225801}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1724,7 +1724,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: db512209dfd4d4f52882c2ae03730525, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -8.32
+      value: -7.64
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: db512209dfd4d4f52882c2ae03730525, type: 3}
       propertyPath: m_LocalPosition.y
@@ -2545,6 +2545,7 @@ MonoBehaviour:
   OppositionAttackRange: 3.5
   AttackFrekvens: 2
   NpcAnimator: {fileID: 1552736457}
+  NpcAlive: {fileID: 0}
 --- !u!114 &1287481399
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3140,7 +3141,7 @@ MonoBehaviour:
   OppositionAttackRange: 3.5
   PlayerAnimator: {fileID: 1287481401}
   NpcAnimator: {fileID: 1552736457}
-  isAlive: 1
+  NpcAlive: 0
 --- !u!114 &1552736454
 MonoBehaviour:
   m_ObjectHideFlags: 0

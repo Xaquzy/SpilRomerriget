@@ -1,0 +1,164 @@
+# Players and board
+PLAYER1 = 'X'
+PLAYER2 = 'O'
+
+board = [[' ', ' ', ' ', ' ', ' ', ' ',' '],
+         [' ', ' ', ' ', ' ', ' ', ' ',' '],
+         [' ', ' ', ' ', ' ', ' ', ' ',' '],
+         [' ', ' ', ' ', ' ', ' ', ' ',' '],
+         [' ', ' ', ' ', ' ', ' ', ' ',' '],
+         [' ', ' ', ' ', ' ', ' ', ' ',' ']]
+
+# Set position
+def set_pos(pos_x, player):
+    for y in range(5,-1,-1):
+        if board[y][pos_x]== ' ':
+            board[y][pos_x] = player
+            return True
+    return False
+
+# The next player
+def next_player(player):
+    if player == PLAYER1:
+        return PLAYER2
+    if player == PLAYER2:
+        return PLAYER1
+    return player
+
+# Full board
+def board_full():
+    for y in range(6):
+        for x in range(7):
+            if board[y][x] == ' ':
+                return False
+    return True
+
+# Resets the board
+def new_game():
+    for y in range(6):
+        for x in range(7):
+            board[y][x] = ' '
+
+# Winning combinations
+
+# Diagonal (left -> right)
+def diag_1_win(player, start_x, start_y):
+    count = 0
+    for i in range(4):
+        x = start_x + i
+        y = start_y + i
+        if board[y][x] == player:
+                count += 1
+    return count == 4
+
+# Diagonal (right -> left)
+def diag_2_win(player, start_x, start_y):
+    count = 0
+    for i in range(4):
+        x = start_x - i
+        y = start_y + i
+        if board[y][x] == player:
+                    count += 1
+    return count == 4
+
+# Horizontal
+def vandret_win(player, start_x, start_y):
+    count = 0
+    for i in range(4):
+        x = start_x + i
+        y = start_y 
+        if board[y][x] == player:
+                count += 1
+    return count == 4
+
+# Vertical
+def lodret_win(player, start_x, start_y):
+    count = 0
+    for i in range(4):
+        x = start_x
+        y = start_y - i
+        if board[y][x] == player:
+                    count += 1
+    return count == 4
+
+# Check win
+def check_if_wins(player):
+# Diagonal (left -> right)
+    for y in range (3):
+        for x in range (4):
+            if diag_1_win(player, x, y):
+                return True
+
+# Diagonal (right -> left)
+    for y in range (3):
+        for x in range (4):
+            if diag_2_win(player, x+3, y):
+                return True
+
+# Horizontal
+    for y in range (6):
+        for x in range (4):
+            if vandret_win(player, x, y):
+                return True
+
+# Vertical
+    for y in range (6):
+        for x in range (7):
+            if lodret_win(player, x, y):
+                return True
+
+
+    return False
+
+# Game over
+def game_over():
+    if check_if_wins(PLAYER1) or check_if_wins(PLAYER2):
+        return True
+    elif board_full():
+        print("Game over! It's a tie.")
+        return True
+    else:
+        return False
+
+# The board
+def print_board():
+        print ("  1 " , " 2 " , " 3 " , " 4  " , "5  " , "6  " , "7" )
+        print('+' + '---+' * 7)
+        for row in board:
+            print('|', end='')
+            for cell in row:
+                print(f' {cell} |', end='')
+            print('\n+' + '---+' * 7)
+
+# Play in terminal
+def play():
+    new_game()
+    player = PLAYER1
+
+    while True:
+        player = next_player(player)
+        print()
+        print_board()
+        print(f"Player {player}'s turn.")
+        print()
+        column = int(input("Choose between column 1-7. "))-1
+        valid_move = set_pos(column, player)
+    
+        while not valid_move:
+            print()
+            print("This column is full, place your piece somewhere else.")
+            column = int(input("Choose between column 1-7. "))-1
+            valid_move = set_pos(column, player)
+
+        if game_over():
+            print_board()
+            if check_if_wins(PLAYER1):
+                print(f"Game over! Player {player} won!")
+                break
+            if check_if_wins(PLAYER2):
+                print(f"Game over! Player {player} won!")
+                break
+            else:       
+                break
+
+play()

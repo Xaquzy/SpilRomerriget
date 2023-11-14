@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
+using UnityEngine.UIElements;
 
 public class HealthbarPlayer : MonoBehaviour
 {
@@ -16,6 +17,8 @@ public class HealthbarPlayer : MonoBehaviour
     private float time = 0.0f;
     public float AttackFrekvens = 0.5f;
     public Animator NpcAnimator;
+    public GameObject NpcAlive;
+    private bool yy;
     // Start is called before the first frame update
 
 
@@ -36,25 +39,24 @@ public class HealthbarPlayer : MonoBehaviour
     //NPC angriber player funktion
     public void DamageOpposition()
     {
-
-        distanceToOther = Mathf.Abs((AI.position - player.position).magnitude);
-        time = time + Time.deltaTime;
-    
+            distanceToOther = Mathf.Abs((AI.position - player.position).magnitude);
+            time = time + Time.deltaTime;
             if (distanceToOther < OppositionAttackRange)
             {
 
+                NpcAnimator.SetBool("Attack", false);
+
                 if (time >= AttackFrekvens)
                 {
-                time = 0.0f;
-                currentHealth = currentHealth - damage;
-                healthbar.SetHealth(currentHealth);
-                AI.GetComponent<NavMeshAgent>().speed = 0;
-                NpcAnimator.SetBool("Attack", true);
+                    time = 0.0f;
+                    currentHealth = currentHealth - damage;
+                    healthbar.SetHealth(currentHealth);
+                    AI.GetComponent<NavMeshAgent>().speed = 0;
+                    NpcAnimator.SetBool("Attack", true);
                 }
 
-                NpcAnimator.SetBool("Attack", false);
             }
-       
     }
+       
 
 }

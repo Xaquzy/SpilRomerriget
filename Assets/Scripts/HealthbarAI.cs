@@ -14,7 +14,8 @@ public class HealthbarAI : MonoBehaviour
     private float distanceToOther;
     public Animator PlayerAnimator;
     public Animator NpcAnimator;
-    public bool isAlive = true;
+    public bool NpcAlive;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -27,7 +28,7 @@ public class HealthbarAI : MonoBehaviour
     void Update()
     {
         DamageOpposition();
-        DødAnimation();
+        Død();
     }
 
     
@@ -57,12 +58,13 @@ public class HealthbarAI : MonoBehaviour
        
     }
 
-    public void DødAnimation()
+    public void Død()
     {
         if (currentHealth == 0)
         {
             NpcAnimator.SetBool("LøveDød", true);
         }
     }
+
 
 }
