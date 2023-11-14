@@ -84,7 +84,7 @@ public class AiBehaviour : MonoBehaviour
         targetPoint.y = transform.position.y;
     }
 
-
+    
 
     void LookAtTarget()
     {
