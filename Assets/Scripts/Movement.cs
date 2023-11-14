@@ -11,7 +11,7 @@ public class Movement : MonoBehaviour
     float turnSmoothVelocity;
 
     //Animation
-    //public Animator animator;
+    public Animator PlayerAnimator;
 
     //Movement
     Vector2 movement;
@@ -96,24 +96,14 @@ public class Movement : MonoBehaviour
         }
         controller.Move(velocity * Time.deltaTime);
 
-        //Animation - Walking
+        //Animation
         if (direction.magnitude <= 0)
         {
-            //animator.SetBool("IsWalking", false);
+            PlayerAnimator.SetBool("Moving", false);
         }
         else
         {
-            //animator.SetBool("IsWalking", true);
-        }
-
-        //Animation - Sprinting
-        if (trueSpeed >= walkSpeed + 0.1f)
-        {
-            //animator.SetBool("IsSprinting", true);
-        }
-        else
-        {
-            //animator.SetBool("IsSprinting", false);
+            PlayerAnimator.SetBool("Moving", true);
         }
 
     }

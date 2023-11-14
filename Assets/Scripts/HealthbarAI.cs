@@ -13,40 +13,55 @@ public class HealthbarAI : MonoBehaviour
     [SerializeField] public float OppositionAttackRange;
     private float distanceToOther;
     public Animator PlayerAnimator;
+    public Animator NpcAnimator;
+    public bool isAlive = true;
     // Start is called before the first frame update
     void Start()
     {
         currentHealth = maxHealth;
         healthbar.SetMaxHealth(maxHealth);
+        NpcAnimator.SetBool("LøveDød", false);
     }
 
     // Update is called once per frame
     void Update()
     {
         DamageOpposition();
+        DødAnimation();
     }
 
-
-    // Player attack funktion
+    
+    // Player angriber NPC funktion
     public void DamageOpposition()
     {
 
         distanceToOther = Mathf.Abs((AI.position - player.position).magnitude);
-        if (Input.GetKeyUp(KeyCode.L))
+
+
+        if (Input.GetKeyUp(KeyCode.Mouse0))
         {
+            PlayerAnimator.SetBool("PlayerAttack", true);
             if (distanceToOther < OppositionAttackRange)
             {
                 {
                     currentHealth = currentHealth - damage;
                     healthbar.SetHealth(currentHealth);
-                    PlayerAnimator.SetBool("Attack", true);
                 }
             }
         }
-
         else
         {
-            PlayerAnimator.SetBool("Attack", false);
+            PlayerAnimator.SetBool("PlayerAttack", false);
+        }
+
+       
+    }
+
+    public void DødAnimation()
+    {
+        if (currentHealth == 0)
+        {
+            NpcAnimator.SetBool("LøveDød", true);
         }
     }
 

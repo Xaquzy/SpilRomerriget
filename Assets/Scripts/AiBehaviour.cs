@@ -61,7 +61,8 @@ public class AiBehaviour : MonoBehaviour
         if (state == State.AttackState)
         {
             Attack();
-        }      
+        }
+
     }
 
 
@@ -102,6 +103,18 @@ public class AiBehaviour : MonoBehaviour
         {
             float t = rotateTimer / timeToRotate;
             transform.forward = Vector3.Slerp(oldRotation, targetRotation, t);
+            rotateTimer += Time.deltaTime;
+
+        }
+    }
+
+
+    void SetRotationToPlayer()
+    {
+        if (rotateTimer < timeToRotate)
+        {
+            float t = rotateTimer / timeToRotate;
+            transform.forward = Vector3.Slerp(oldRotation, player.transform.position, t);
             rotateTimer += Time.deltaTime;
 
         }
@@ -169,6 +182,8 @@ public class AiBehaviour : MonoBehaviour
         AI.speed = moveSpeed;
         AI.SetDestination(player.position);        
         distanceToPlayer = (AI.transform.position - player.position).magnitude;
+        SetRotationToPlayer();
+
         if (distanceToPlayer > maxChaseDistance)
         {
             state = State.PatrolState;
@@ -185,6 +200,9 @@ public class AiBehaviour : MonoBehaviour
         {
         Debug.Log("DTP " + distanceToPlayer + ": Attacking");
         
+        AI.speed = 0;
+        SetRotationToPlayer();
+
         distanceToPlayer = (AI.transform.position - player.position).magnitude;
         if (distanceToPlayer > attackRange)
         {
