@@ -61,18 +61,7 @@ public class AiBehaviour : MonoBehaviour
         if (state == State.AttackState)
         {
             Attack();
-        }
-
-       if ((transform.position - targetPoint).magnitude < targetRadius)
-        { 
-            NextTarget();
-            LookAtTarget();
-            speedUpTimer = 0f;
-        }
-
-       
-
-      
+        }      
     }
 
 
@@ -99,6 +88,10 @@ public class AiBehaviour : MonoBehaviour
         else
         {
             Vector3 lookAt = player.transform.position;
+            lookAt.y = transform.position.y;
+
+            Vector3 lookDir = (lookAt - transform.position).normalized;
+            transform.forward = lookDir;
         }
 
     }
@@ -109,17 +102,6 @@ public class AiBehaviour : MonoBehaviour
         {
             float t = rotateTimer / timeToRotate;
             transform.forward = Vector3.Slerp(oldRotation, targetRotation, t);
-            rotateTimer += Time.deltaTime;
-
-        }
-    }
-
-    void SetRotationToPlayer()
-    {
-        if (rotateTimer < timeToRotate)
-        {
-            float t = rotateTimer / timeToRotate;
-            transform.forward = Vector3.Slerp(oldRotation, player.position, t);
             rotateTimer += Time.deltaTime;
 
         }
@@ -154,10 +136,12 @@ public class AiBehaviour : MonoBehaviour
 
         LookAtTarget();
 
+
         if ((transform.position - targetPoint).magnitude < targetRadius)
         {
             NextTarget();
             LookAtTarget();
+            speedUpTimer = 0f;
         }
 
 
@@ -182,12 +166,8 @@ public class AiBehaviour : MonoBehaviour
     void Chase()
     {
         Debug.Log("DTP " + distanceToPlayer + ": Chasing");
-        SetRotationToPlayer();
-
-
-
-        AI.SetDestination(player.position);
-        
+        AI.speed = moveSpeed;
+        AI.SetDestination(player.position);        
         distanceToPlayer = (AI.transform.position - player.position).magnitude;
         if (distanceToPlayer > maxChaseDistance)
         {
@@ -204,9 +184,7 @@ public class AiBehaviour : MonoBehaviour
     public void Attack()
         {
         Debug.Log("DTP " + distanceToPlayer + ": Attacking");
-        SetRotationToPlayer();
-
-
+        
         distanceToPlayer = (AI.transform.position - player.position).magnitude;
         if (distanceToPlayer > attackRange)
         {
