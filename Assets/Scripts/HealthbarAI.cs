@@ -12,6 +12,7 @@ public class HealthbarAI : MonoBehaviour
     [SerializeField] private Transform AI;
     [SerializeField] public float OppositionAttackRange;
     private float distanceToOther;
+    public Animator PlayerAnimator;
     // Start is called before the first frame update
     void Start()
     {
@@ -38,8 +39,14 @@ public class HealthbarAI : MonoBehaviour
                 {
                     currentHealth = currentHealth - damage;
                     healthbar.SetHealth(currentHealth);
+                    PlayerAnimator.SetBool("Attack", true);
                 }
             }
+        }
+
+        else
+        {
+            PlayerAnimator.SetBool("Attack", false);
         }
     }
 

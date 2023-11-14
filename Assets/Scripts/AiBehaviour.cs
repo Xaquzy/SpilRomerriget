@@ -13,9 +13,10 @@ public class AiBehaviour : MonoBehaviour
     public NavMeshAgent AI;
     [SerializeField] private Transform[] points;
     [SerializeField] private float moveSpeed = 3;
-    [SerializeField] private float targetRadius = 0.1f;
+    public float targetRadius = 0.1f;
     [SerializeField] private float maxChaseDistance;
     [SerializeField] public float attackRange;
+
 
     private int indexOfTarget;
     private Vector3 targetPoint;
@@ -30,8 +31,7 @@ public class AiBehaviour : MonoBehaviour
     private float speedUpTimer;
     private float rotateTimer = 0f;
     private bool InAttackRange;
-    
- 
+   
 
 
 
@@ -191,11 +191,12 @@ public class AiBehaviour : MonoBehaviour
     public void Attack()
         {
         Debug.Log("Attacking");
-
-        //Selve attack funktionen - Gjort i HealthbarAI script
-        AI.SetDestination(player.transform.position);
-
         distanceToPlayer = (AI.transform.position - player.position).magnitude;
+        if (distanceToPlayer < attackRange)
+        {
+            AI.speed = 0;
+        }
+
         if (distanceToPlayer > attackRange)
         {
             state = State.ChaseState;

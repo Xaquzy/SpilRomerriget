@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.AI;
 
 public class HealthbarPlayer : MonoBehaviour
 {
@@ -14,11 +15,14 @@ public class HealthbarPlayer : MonoBehaviour
     private float distanceToOther;
     private float time = 0.0f;
     public float AttackFrekvens = 0.5f;
+    public AiBehaviour AiBehaviour;
+    public Animator NpcAnimator;
     // Start is called before the first frame update
     void Start()
     {
         currentHealth = maxHealth;
         healthbar.SetMaxHealth(maxHealth);
+        time = AttackFrekvens;
     }
 
     // Update is called once per frame
@@ -36,12 +40,17 @@ public class HealthbarPlayer : MonoBehaviour
         time = time + Time.deltaTime;
         if (distanceToOther < OppositionAttackRange)
         {
+            NpcAnimator.SetBool("Attack", false);
+
             if (time >= AttackFrekvens)
             {
                 time = 0.0f;
                 currentHealth = currentHealth - damage;
                 healthbar.SetHealth(currentHealth);
+                NpcAnimator.SetBool("Attack", true);
+                AI.GetComponent<NavMeshAgent>().speed = 0;
             }
+            
         }
     }
 
