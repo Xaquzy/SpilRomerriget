@@ -46,7 +46,7 @@ public class SceneTransition : MonoBehaviour
         Cursor.lockState = CursorLockMode.None;
         Cursor.visible = true;
         // Load scene
-        SceneManager.LoadScene("GameoverScreen");
+        SceneManager.LoadScene("Gameover");
     }
 
     public void LoadMainMenu()
@@ -55,7 +55,7 @@ public class SceneTransition : MonoBehaviour
         Cursor.lockState = CursorLockMode.None;
         Cursor.visible = true;
         // Load scene
-        SceneManager.LoadScene("Bane1ny");
+        SceneManager.LoadScene("MainMenu");
     }
 
     public void ExitGame()
