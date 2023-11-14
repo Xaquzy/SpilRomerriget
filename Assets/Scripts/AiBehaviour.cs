@@ -114,6 +114,17 @@ public class AiBehaviour : MonoBehaviour
         }
     }
 
+    void SetRotationToPlayer()
+    {
+        if (rotateTimer < timeToRotate)
+        {
+            float t = rotateTimer / timeToRotate;
+            transform.forward = Vector3.Slerp(oldRotation, player.position, t);
+            rotateTimer += Time.deltaTime;
+
+        }
+    }
+
 
     void SetSpeed()
     {
@@ -139,8 +150,7 @@ public class AiBehaviour : MonoBehaviour
     }
     void Patrol()
     {
-        Debug.Log("Patrolling");
-
+        Debug.Log("DTP " + distanceToPlayer + ": Patrolling");
 
         LookAtTarget();
 
@@ -171,7 +181,10 @@ public class AiBehaviour : MonoBehaviour
     // Chase funktion
     void Chase()
     {
-        Debug.Log("Chasing");
+        Debug.Log("DTP " + distanceToPlayer + ": Chasing");
+        SetRotationToPlayer();
+
+
 
         AI.SetDestination(player.position);
         
@@ -190,13 +203,11 @@ public class AiBehaviour : MonoBehaviour
     }
     public void Attack()
         {
-        Debug.Log("Attacking");
-        distanceToPlayer = (AI.transform.position - player.position).magnitude;
-        if (distanceToPlayer < attackRange)
-        {
-            AI.speed = 0;
-        }
+        Debug.Log("DTP " + distanceToPlayer + ": Attacking");
+        SetRotationToPlayer();
 
+
+        distanceToPlayer = (AI.transform.position - player.position).magnitude;
         if (distanceToPlayer > attackRange)
         {
             state = State.ChaseState;

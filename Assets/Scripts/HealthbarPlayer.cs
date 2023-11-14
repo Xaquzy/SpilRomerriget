@@ -12,12 +12,14 @@ public class HealthbarPlayer : MonoBehaviour
     [SerializeField] private Transform player;
     [SerializeField] private Transform AI;
     [SerializeField] public float OppositionAttackRange;
+    [SerializeField] public float DistanceToPlayerDuringAttack;
     private float distanceToOther;
     private float time = 0.0f;
     public float AttackFrekvens = 0.5f;
-    public AiBehaviour AiBehaviour;
     public Animator NpcAnimator;
     // Start is called before the first frame update
+
+    
     void Start()
     {
         currentHealth = maxHealth;
@@ -49,6 +51,8 @@ public class HealthbarPlayer : MonoBehaviour
                 healthbar.SetHealth(currentHealth);
                 NpcAnimator.SetBool("Attack", true);
                 AI.GetComponent<NavMeshAgent>().speed = 0;
+              
+
             }
             
         }
