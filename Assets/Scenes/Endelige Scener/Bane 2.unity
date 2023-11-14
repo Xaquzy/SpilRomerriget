@@ -430,8 +430,8 @@ MonoBehaviour:
   m_StreamingVersion: 20170927
   m_Priority: 0
   m_StandbyUpdate: 2
-  m_LookAt: {fileID: 0}
-  m_Follow: {fileID: 1651521612}
+  m_LookAt: {fileID: 1896229983}
+  m_Follow: {fileID: 1651521615}
   m_CommonLens: 1
   m_Lens:
     FieldOfView: 40
@@ -1904,7 +1904,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_BindingMode: 5
-  m_FollowOffset: {x: 0, y: 4, z: -2}
+  m_FollowOffset: {x: 0, y: 2.582618, z: -6.986918}
   m_XDamping: 1
   m_YDamping: 1
   m_ZDamping: 1
@@ -2800,6 +2800,7 @@ MonoBehaviour:
   player: {fileID: 1651521615}
   AI: {fileID: 1552736455}
   OppositionAttackRange: 3
+  PlayerAnimator: {fileID: 0}
 --- !u!114 &1552736454
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2818,9 +2819,9 @@ MonoBehaviour:
   - {fileID: 524480255}
   - {fileID: 1493947802}
   moveSpeed: 2
-  targetRadius: 1
-  maxChaseDistance: 5
-  attackRange: 2
+  targetRadius: 3
+  maxChaseDistance: 10
+  attackRange: 4
   timeToSpeedUp: 1
   timeToRotate: 1
 --- !u!4 &1552736455 stripped
@@ -3083,7 +3084,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_BindingMode: 5
-  m_FollowOffset: {x: 0, y: 4, z: -2}
+  m_FollowOffset: {x: 0, y: 2.582618, z: -6.986918}
   m_XDamping: 1
   m_YDamping: 1
   m_ZDamping: 1
@@ -3247,11 +3248,6 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 383afe927f2d84c71916a1ae8336f059, type: 3}
   m_PrefabInstance: {fileID: 1651521610}
   m_PrefabAsset: {fileID: 0}
---- !u!4 &1651521612 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: -1041700367749053021, guid: 383afe927f2d84c71916a1ae8336f059, type: 3}
-  m_PrefabInstance: {fileID: 1651521610}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &1651521615 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 383afe927f2d84c71916a1ae8336f059, type: 3}
@@ -3276,7 +3272,9 @@ MonoBehaviour:
   player: {fileID: 1651521615}
   AI: {fileID: 1552736455}
   OppositionAttackRange: 2
-  AttackFrekvens: 0.5
+  AttackFrekvens: 3
+  AiBehaviour: {fileID: 0}
+  NpcAnimator: {fileID: 1552736457}
 --- !u!114 &1651521617
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3394,7 +3392,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_BindingMode: 5
-  m_FollowOffset: {x: 0, y: 4, z: -2}
+  m_FollowOffset: {x: 0, y: 2.582618, z: -6.986918}
   m_XDamping: 1
   m_YDamping: 1
   m_ZDamping: 1
