@@ -20,7 +20,7 @@ public class SceneTransition : MonoBehaviour
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
         // Load scene
-        SceneManager.LoadScene("Bane1Ny");
+        SceneManager.LoadScene("Bane 1");
     }
 
   public void LoadSecondLevel()
@@ -29,7 +29,7 @@ public class SceneTransition : MonoBehaviour
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
         // Load scene
-        SceneManager.LoadScene("Bane2");
+        SceneManager.LoadScene("Bane 2");
     }
 
     public void LoadThirdLevel()
@@ -38,7 +38,7 @@ public class SceneTransition : MonoBehaviour
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
         // Load scene
-        SceneManager.LoadScene("Bane3Ny");
+        SceneManager.LoadScene("Bane 3");
     }
     public void LoadGameOverScene()
     {
