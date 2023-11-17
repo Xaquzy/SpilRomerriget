@@ -20,14 +20,14 @@ public class HealthbarAI : MonoBehaviour
     {
         currentHealth = maxHealth;
         healthbar.SetMaxHealth(maxHealth);
-        NpcAnimator.SetBool("NpcDød", false);
+        NpcAnimator.SetBool("NpcDead", false);
     }
 
     // Update is called once per frame
     void Update()
     {
         DamageOpposition();
-        Død();
+        Dead();
     }
 
     
@@ -57,11 +57,11 @@ public class HealthbarAI : MonoBehaviour
        
     }
 
-    public void Død()
+    public void Dead()
     {
         if (currentHealth == 0)
         {
-            NpcAnimator.SetBool("NpcDød", true);
+            NpcAnimator.SetBool("NpcDead", true);
         }
     }
 
