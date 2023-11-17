@@ -9,7 +9,7 @@ EditorBuildSettings:
     path: Assets/Scenes/TestScener/Sara/WIN.unity
     guid: 54f055b0f2742422cb27171d78cf4ffb
   - enabled: 1
-    path: Assets/Scenes/TestScener/Sara/Gameover.unity
+    path: Assets/Scenes/TestScener/Sara/1Gameover.unity
     guid: 187d28843f2df4ee6b98c775da6fbcd9
   - enabled: 0
     path: Assets/Scenes/TestScener/Sara/Sara 1.unity

@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.XR;
 
 public class SceneTransition : MonoBehaviour
 {
@@ -14,6 +15,20 @@ public class SceneTransition : MonoBehaviour
         SceneManager.LoadScene("WIN");
     }
 
+    public void LoadNextLevel()
+    {
+        Cursor.lockState = CursorLockMode.None;
+        Cursor.visible = true;
+        if (SceneManager.GetActiveScene().name == "Bane 1")
+        {
+            SceneManager.LoadScene("Bane 2");
+           
+        }
+        else
+        {
+            SceneManager.LoadScene("Bane 3");
+        }
+    }
     public void LoadMainLevel()
     {
         // No cursor while playing
