@@ -38,8 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-
-  m_IndirectSpecularColor: {r: 0.45896006, g: 0.32300603, b: 0.32182372, a: 1}
+  m_IndirectSpecularColor: {r: 0.45896208, g: 0.32300743, b: 0.32182455, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1975,7 +1974,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_BindingMode: 5
-  m_FollowOffset: {x: 0, y: 2.533646, z: -6.997825}
+  m_FollowOffset: {x: 0, y: 2.088083, z: -6.716909}
   m_XDamping: 1
   m_YDamping: 1
   m_ZDamping: 1
@@ -2373,6 +2372,8 @@ MonoBehaviour:
   OppositionAttackRange: 3.5
   AttackFrekvens: 2
   NpcAnimator: {fileID: 1552736457}
+  PlayerAnimator: {fileID: 0}
+  countdownTime: 3
 --- !u!114 &1287481399
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2968,7 +2969,6 @@ MonoBehaviour:
   OppositionAttackRange: 3.5
   PlayerAnimator: {fileID: 1287481401}
   NpcAnimator: {fileID: 1552736457}
-
   countdownTime: 3
 --- !u!114 &1552736454
 MonoBehaviour:
@@ -3253,7 +3253,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_BindingMode: 5
-  m_FollowOffset: {x: 0, y: 2.533646, z: -6.997825}
+  m_FollowOffset: {x: 0, y: 2.088083, z: -6.716909}
   m_XDamping: 1
   m_YDamping: 1
   m_ZDamping: 1
@@ -3385,7 +3385,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_BindingMode: 5
-  m_FollowOffset: {x: 0, y: 2.533646, z: -6.997825}
+  m_FollowOffset: {x: 0, y: 2.088083, z: -6.716909}
   m_XDamping: 1
   m_YDamping: 1
   m_ZDamping: 1
