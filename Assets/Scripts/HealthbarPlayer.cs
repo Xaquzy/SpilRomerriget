@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
+using UnityEngine.SceneManagement;
 using UnityEngine.UIElements;
 
 public class HealthbarPlayer : MonoBehaviour
@@ -17,6 +18,10 @@ public class HealthbarPlayer : MonoBehaviour
     private float time = 0.0f;
     public float AttackFrekvens = 0.5f;
     public Animator NpcAnimator;
+    public Animator PlayerAnimator;
+    public float countdownTime = 3f;
+    private bool countdownStarted = false;
+
     // Start is called before the first frame update
 
 
@@ -25,12 +30,25 @@ public class HealthbarPlayer : MonoBehaviour
         currentHealth = maxHealth;
         healthbar.SetMaxHealth(maxHealth);
         time = AttackFrekvens;
+        PlayerAnimator.SetBool("PlayerDead", false);
     }
 
     // Update is called once per frame
     void Update()
     {
-        DamageOpposition();   
+        DamageOpposition();
+        Dead();
+
+        if (countdownStarted)
+        { 
+            countdownTime -= Time.deltaTime;
+            if (countdownTime <= 0f)
+                {
+                    SceneManager.LoadScene("GameOver");
+                }
+            
+        }
+
     }
 
 
@@ -55,6 +73,17 @@ public class HealthbarPlayer : MonoBehaviour
 
             }
     }
-       
 
+
+    public void Dead()
+    {
+        if (currentHealth == 0)
+        {
+            if (!countdownStarted)
+            {
+                PlayerAnimator.SetBool("PlayerDead", true);
+                countdownStarted = true;
+            }
+        }
+    }
 }
