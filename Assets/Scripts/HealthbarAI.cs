@@ -32,12 +32,24 @@ public class HealthbarAI : MonoBehaviour
     {
         DamageOpposition();
         Dead();
+
         if (countdownStarted)
         {
-            countdownTime -= Time.deltaTime;
-            if (countdownTime <= 0f)
+            if (SceneManager.GetActiveScene().name == "Bane 3")
             {
-                SceneManager.LoadScene("NextLevel");
+                countdownTime -= Time.deltaTime;
+                if (countdownTime <= 0f)
+                {
+                    SceneManager.LoadScene("WIN");
+                }
+            }
+            else
+            {
+                countdownTime -= Time.deltaTime;
+                if (countdownTime <= 0f)
+                {
+                    SceneManager.LoadScene("NextLevel");
+                }
             }
         }
     }
