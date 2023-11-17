@@ -30,7 +30,7 @@ public class AiBehaviour : MonoBehaviour
     private Vector3 targetRotation;
     private float speedUpTimer;
     private float rotateTimer = 0f;
-    private bool InAttackRange;
+
 
    
 
