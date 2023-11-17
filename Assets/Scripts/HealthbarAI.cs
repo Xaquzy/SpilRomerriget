@@ -1,6 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Threading;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class HealthbarAI : MonoBehaviour
 {
@@ -14,6 +16,8 @@ public class HealthbarAI : MonoBehaviour
     private float distanceToOther;
     public Animator PlayerAnimator;
     public Animator NpcAnimator;
+    public float countdownTime = 3f;
+    private bool countdownStarted = false;
 
     // Start is called before the first frame update
     void Start()
@@ -28,9 +32,17 @@ public class HealthbarAI : MonoBehaviour
     {
         DamageOpposition();
         Dead();
+        if (countdownStarted)
+        {
+            countdownTime -= Time.deltaTime;
+            if (countdownTime <= 0f)
+            {
+                SceneManager.LoadScene("NextLevel");
+            }
+        }
     }
 
-    
+
     // Player angriber NPC funktion
     public void DamageOpposition()
     {
@@ -54,16 +66,18 @@ public class HealthbarAI : MonoBehaviour
             PlayerAnimator.SetBool("PlayerAttack", false);
         }
 
-       
+
     }
 
     public void Dead()
     {
         if (currentHealth == 0)
         {
-            NpcAnimator.SetBool("NpcDead", true);
+            if (!countdownStarted)
+            {
+                NpcAnimator.SetBool("NpcDead", true);
+                countdownStarted = true;
+            }
         }
     }
-
-
 }
