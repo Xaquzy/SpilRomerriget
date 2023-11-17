@@ -38,11 +38,8 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-<<<<<<< HEAD
-  m_IndirectSpecularColor: {r: 0.45896208, g: 0.32300743, b: 0.32182455, a: 1}
-=======
+
   m_IndirectSpecularColor: {r: 0.45896006, g: 0.32300603, b: 0.32182372, a: 1}
->>>>>>> fff7826074697cfeed242aed6f2153cac6da0cc5
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -2971,11 +2968,8 @@ MonoBehaviour:
   OppositionAttackRange: 3.5
   PlayerAnimator: {fileID: 1287481401}
   NpcAnimator: {fileID: 1552736457}
-<<<<<<< HEAD
-  countdownTime: 5
-=======
+
   countdownTime: 3
->>>>>>> fff7826074697cfeed242aed6f2153cac6da0cc5
 --- !u!114 &1552736454
 MonoBehaviour:
   m_ObjectHideFlags: 0
