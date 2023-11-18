@@ -3530,7 +3530,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_BindingMode: 5
-  m_FollowOffset: {x: 0, y: 2.962002, z: -6.59653}
+  m_FollowOffset: {x: 0, y: 0.400003, z: -2.000012}
   m_XDamping: 1
   m_YDamping: 1
   m_ZDamping: 1
@@ -4885,6 +4885,7 @@ MonoBehaviour:
   player: {fileID: 543450652818332216}
   AI: {fileID: 1552736455}
   OppositionAttackRange: 3.5
+  PlayerAttackCooldown: 2
   PlayerAnimator: {fileID: 1287481401}
   NpcAnimator: {fileID: 1552736457}
   countdownTime: 3
@@ -5197,7 +5198,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_BindingMode: 5
-  m_FollowOffset: {x: 0, y: 2.962002, z: -6.59653}
+  m_FollowOffset: {x: 0, y: 0.400003, z: -2.000012}
   m_XDamping: 1
   m_YDamping: 1
   m_ZDamping: 1
@@ -5381,7 +5382,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_BindingMode: 5
-  m_FollowOffset: {x: 0, y: 2.962002, z: -6.59653}
+  m_FollowOffset: {x: 0, y: 0.400003, z: -2.000012}
   m_XDamping: 1
   m_YDamping: 1
   m_ZDamping: 1

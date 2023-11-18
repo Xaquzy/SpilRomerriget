@@ -13,6 +13,8 @@ public class HealthbarAI : MonoBehaviour
     [SerializeField] private Transform AI;
     [SerializeField] public float OppositionAttackRange;
     private float distanceToOther;
+    public float PlayerAttackCooldown = 2f;
+    private float NextAttackTime = 0f;
     public Animator PlayerAnimator;
     public Animator NpcAnimator;
     public float countdownTime = 3f;
@@ -29,7 +31,50 @@ public class HealthbarAI : MonoBehaviour
     {
         DamageOpposition();
         Dead();
+        BaneSkift();
+    }
 
+    public void DamageOpposition()
+    {
+        distanceToOther = Mathf.Abs((AI.position - player.position).magnitude);
+
+        if (Time.time > NextAttackTime)
+        {
+            if (Input.GetKeyUp(KeyCode.Mouse0))
+            {
+                PlayerAnimator.SetBool("PlayerAttack", true);
+                NextAttackTime = Time.time + PlayerAttackCooldown;
+
+                if (distanceToOther < OppositionAttackRange)
+                {
+                    PlayerAnimator.SetBool("PlayerAttack", true);
+                    currentHealth -= damage;
+                    healthbar.SetHealth(currentHealth);
+                    NextAttackTime = Time.time + PlayerAttackCooldown;
+                }
+            }
+            else
+            {
+                PlayerAnimator.SetBool("PlayerAttack", false);
+            }
+        }
+        
+    }
+
+    public void Dead()
+    {
+        if (currentHealth <= 0)
+        {
+            if (!countdownStarted)
+            {
+                NpcAnimator.SetBool("NpcDead", true);
+                countdownStarted = true;
+            }
+        }
+    }
+
+    public void BaneSkift()
+    {
         if (countdownStarted)
         {
             Debug.Log("Current Scene: " + SceneManager.GetActiveScene().name);
@@ -57,37 +102,6 @@ public class HealthbarAI : MonoBehaviour
                 {
                     SceneManager.LoadScene("1NextLevel");
                 }
-            }
-        }
-    }
-
-    public void DamageOpposition()
-    {
-        distanceToOther = Mathf.Abs((AI.position - player.position).magnitude);
-
-        if (Input.GetKeyUp(KeyCode.Mouse0))
-        {
-            PlayerAnimator.SetBool("PlayerAttack", true);
-            if (distanceToOther < OppositionAttackRange)
-            {
-                currentHealth -= damage;
-                healthbar.SetHealth(currentHealth);
-            }
-        }
-        else
-        {
-            PlayerAnimator.SetBool("PlayerAttack", false);
-        }
-    }
-
-    public void Dead()
-    {
-        if (currentHealth <= 0)
-        {
-            if (!countdownStarted)
-            {
-                NpcAnimator.SetBool("NpcDead", true);
-                countdownStarted = true;
             }
         }
     }
