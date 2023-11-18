@@ -38,8 +38,8 @@ public class HealthbarAI : MonoBehaviour
     {
         distanceToOther = Mathf.Abs((AI.position - player.position).magnitude);
 
-        if (Time.time > NextAttackTime)
-        {
+        if (Time.time >= NextAttackTime)
+        {   
             if (Input.GetKeyUp(KeyCode.Mouse0))
             {
                 PlayerAnimator.SetBool("PlayerAttack", true);
