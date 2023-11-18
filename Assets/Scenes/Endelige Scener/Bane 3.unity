@@ -1430,17 +1430,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxHealth: 4
-  damage: 1
+  damage: 2
   currentHealth: 0
   healthbar: {fileID: 1609527316}
   player: {fileID: 543450653490520244}
   AI: {fileID: 990118178}
   OppositionAttackRange: 20
-  AttackFrekvens: 1
+  AttackFrekvens: 5.1
   NpcAnimator: {fileID: 990118173}
   PlayerAnimator: {fileID: 402486692}
   countdownTime: 3
-  PlayerMove: {fileID: 0}
 --- !u!114 &402486694
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3760,14 +3759,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1b63a0c69b978444297113ff892bd870, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealth: 5
+  maxHealth: 10
   damage: 1
   currentHealth: 0
   healthbar: {fileID: 2080679199}
   player: {fileID: 543450653490520244}
   AI: {fileID: 990118178}
   OppositionAttackRange: 18
-  PlayerAttackCooldown: 2
+  PlayerAttackCooldown: 1
   PlayerAnimator: {fileID: 402486692}
   NpcAnimator: {fileID: 990118173}
   countdownTime: 3
