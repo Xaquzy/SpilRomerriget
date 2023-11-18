@@ -37,7 +37,6 @@ public class HealthbarAI : MonoBehaviour
     public void DamageOpposition()
     {
         distanceToOther = Mathf.Abs((AI.position - player.position).magnitude);
-
         if (Time.time >= NextAttackTime)
         {   
             if (Input.GetKeyUp(KeyCode.Mouse0))
@@ -58,7 +57,6 @@ public class HealthbarAI : MonoBehaviour
                 PlayerAnimator.SetBool("PlayerAttack", false);
             }
         }
-        
     }
 
     public void Dead()

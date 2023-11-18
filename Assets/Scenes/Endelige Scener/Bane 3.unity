@@ -1440,6 +1440,7 @@ MonoBehaviour:
   NpcAnimator: {fileID: 990118173}
   PlayerAnimator: {fileID: 402486692}
   countdownTime: 3
+  PlayerMove: {fileID: 0}
 --- !u!114 &402486694
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1456,6 +1457,7 @@ MonoBehaviour:
   PlayerAnimator: {fileID: 402486692}
   walkSpeed: 10
   sprintSpeed: 20
+  trueSpeed: 0
   jumpHeight: 10
   gravity: -2
 --- !u!143 &402486695
@@ -3765,6 +3767,7 @@ MonoBehaviour:
   player: {fileID: 543450653490520244}
   AI: {fileID: 990118178}
   OppositionAttackRange: 18
+  PlayerAttackCooldown: 2
   PlayerAnimator: {fileID: 402486692}
   NpcAnimator: {fileID: 990118173}
   countdownTime: 3
