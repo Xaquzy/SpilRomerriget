@@ -2616,7 +2616,7 @@ MonoBehaviour:
   healthbar: {fileID: 1566779838}
   player: {fileID: 543450652818332216}
   AI: {fileID: 1827740939}
-  OppositionAttackRange: 3.5
+  OppositionAttackRange: 5
   AttackFrekvens: 2
   NpcAnimator: {fileID: 0}
   PlayerAnimator: {fileID: 1287481401}
@@ -2635,8 +2635,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   mainCam: {fileID: 660645130}
   PlayerAnimator: {fileID: 1287481401}
-  walkSpeed: 4
-  sprintSpeed: 6
+  walkSpeed: 10
+  sprintSpeed: 20
   trueSpeed: 0
   jumpHeight: 5
   gravity: -2
