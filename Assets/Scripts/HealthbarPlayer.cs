@@ -21,6 +21,8 @@ public class HealthbarPlayer : MonoBehaviour
     public Animator PlayerAnimator;
     public float countdownTime = 3f;
     private bool countdownStarted = false;
+    public Movement PlayerMove;
+
 
     // Start is called before the first frame update
 
@@ -79,6 +81,8 @@ public class HealthbarPlayer : MonoBehaviour
     {
         if (currentHealth == 0)
         {
+            float speed = PlayerMove.trueSpeed;
+            speed = 0;
             if (!countdownStarted)
             {
                 PlayerAnimator.SetBool("PlayerDead", true);
