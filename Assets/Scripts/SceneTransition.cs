@@ -59,7 +59,7 @@ public class SceneTransition : MonoBehaviour
     {
         // Enable cursor before switching screen
         Cursor.lockState = CursorLockMode.None;
-        Cursor.visible = true;
+        //Cursor.visible = true;
         // Load scene
         SceneManager.LoadScene("Gameover");
     }
