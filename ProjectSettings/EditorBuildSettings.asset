@@ -15,7 +15,7 @@ EditorBuildSettings:
     path: Assets/Scenes/TestScener/Sara/Sara 1.unity
     guid: 8094d56976d850c46b9858b9326e49df
   - enabled: 1
-    path: Assets/Scenes/TestScener/Sara/NextLevel.unity
+    path: Assets/Scenes/TestScener/Sara/1NextLevel.unity
     guid: d2f3b4c850cd848bb822d3dd200a00a1
   - enabled: 1
     path: Assets/Scenes/TestScener/Sara/MainMenu.unity
@@ -29,4 +29,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Endelige Scener/Bane 1.unity
     guid: efead5030c1627c40ab3bdccba3d1664
+  - enabled: 1
+    path: Assets/Scenes/TestScener/Sara/2NextLevel.unity
+    guid: 7b443385c47e3cb4faa67dcc705e3bad
   m_configObjects: {}

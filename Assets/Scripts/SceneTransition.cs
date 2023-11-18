@@ -19,12 +19,12 @@ public class SceneTransition : MonoBehaviour
     {
         Cursor.lockState = CursorLockMode.None;
         Cursor.visible = true;
-        if (SceneManager.GetActiveScene().name == "Bane 1")
+        if (SceneManager.GetActiveScene().name == "1NextLevel")
         {
             SceneManager.LoadScene("Bane 2");
            
         }
-        else
+        if (SceneManager.GetActiveScene().name == "2NextLevel")
         {
             SceneManager.LoadScene("Bane 3");
         }
@@ -59,7 +59,7 @@ public class SceneTransition : MonoBehaviour
     {
         // Enable cursor before switching screen
         Cursor.lockState = CursorLockMode.None;
-        //Cursor.visible = true;
+        Cursor.visible = true;
         // Load scene
         SceneManager.LoadScene("Gameover");
     }

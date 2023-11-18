@@ -1,6 +1,5 @@
 using System.Collections;
 using System.Collections.Generic;
-using System.Threading;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -19,7 +18,6 @@ public class HealthbarAI : MonoBehaviour
     public float countdownTime = 3f;
     private bool countdownStarted = false;
 
-    // Start is called before the first frame update
     void Start()
     {
         currentHealth = maxHealth;
@@ -27,7 +25,6 @@ public class HealthbarAI : MonoBehaviour
         NpcAnimator.SetBool("NpcDead", false);
     }
 
-    // Update is called once per frame
     void Update()
     {
         DamageOpposition();
@@ -35,6 +32,8 @@ public class HealthbarAI : MonoBehaviour
 
         if (countdownStarted)
         {
+            Debug.Log("Current Scene: " + SceneManager.GetActiveScene().name);
+
             if (SceneManager.GetActiveScene().name == "Bane 3")
             {
                 countdownTime -= Time.deltaTime;
@@ -43,47 +42,47 @@ public class HealthbarAI : MonoBehaviour
                     SceneManager.LoadScene("WIN");
                 }
             }
-            else
+            if (SceneManager.GetActiveScene().name == "Bane 2")
             {
                 countdownTime -= Time.deltaTime;
                 if (countdownTime <= 0f)
                 {
-                    SceneManager.LoadScene("NextLevel");
+                    SceneManager.LoadScene("2NextLevel");
+                }
+            }
+            if (SceneManager.GetActiveScene().name == "Bane 1")
+            {
+                countdownTime -= Time.deltaTime;
+                if (countdownTime <= 0f)
+                {
+                    SceneManager.LoadScene("1NextLevel");
                 }
             }
         }
     }
 
-
-    // Player angriber NPC funktion
     public void DamageOpposition()
     {
-
         distanceToOther = Mathf.Abs((AI.position - player.position).magnitude);
-
 
         if (Input.GetKeyUp(KeyCode.Mouse0))
         {
             PlayerAnimator.SetBool("PlayerAttack", true);
             if (distanceToOther < OppositionAttackRange)
             {
-                {
-                    currentHealth = currentHealth - damage;
-                    healthbar.SetHealth(currentHealth);
-                }
+                currentHealth -= damage;
+                healthbar.SetHealth(currentHealth);
             }
         }
         else
         {
             PlayerAnimator.SetBool("PlayerAttack", false);
         }
-
-
     }
 
     public void Dead()
     {
-        if (currentHealth == 0)
+        if (currentHealth <= 0)
         {
             if (!countdownStarted)
             {
@@ -93,3 +92,4 @@ public class HealthbarAI : MonoBehaviour
         }
     }
 }
+
