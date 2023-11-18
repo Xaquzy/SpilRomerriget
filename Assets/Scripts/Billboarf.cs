@@ -5,14 +5,9 @@ using UnityEngine;
 public class Billboarf : MonoBehaviour
 {
     public Transform mainCam;
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
 
     // Update is called once per frame
-    void LateUpdate()
+    void Update()
     {
         transform.LookAt(transform.position + mainCam.forward);
     }
