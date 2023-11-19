@@ -21,10 +21,10 @@ EditorBuildSettings:
     path: Assets/Scenes/TestScener/Sara/MainMenu.unity
     guid: 0eea759f70e2e4f97bab6b35c6bbdd13
   - enabled: 1
-    path: Assets/Scenes/Endelige Scener/Bane 1.unity
+    path: Assets/Scenes/Endelige Scener/Bane 2.unity
     guid: b3f40e2d3e7f1854fb02cf3e2a02e08a
   - enabled: 1
-    path: Assets/Scenes/Endelige Scener/Bane 2.unity
+    path: Assets/Scenes/Endelige Scener/Bane 3.unity
     guid: 038f8db8bff13be4994253519fc07675
   - enabled: 1
     path: "Assets/Scenes/Endelige Scener/Delvis spillelig f\xE6rddiggjort - Bane
