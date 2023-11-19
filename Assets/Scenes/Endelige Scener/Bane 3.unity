@@ -1492,7 +1492,7 @@ MonoBehaviour:
   player: {fileID: 543450653490520244}
   AI: {fileID: 990118178}
   OppositionAttackRange: 20
-  AttackFrekvens: 1.5
+  AttackFrekvens: 1
   NpcAnimator: {fileID: 990118173}
   PlayerAnimator: {fileID: 402486692}
   countdownTime: 2
@@ -4106,7 +4106,7 @@ MonoBehaviour:
   healthbar: {fileID: 2080679199}
   player: {fileID: 543450653490520244}
   AI: {fileID: 990118178}
-  OppositionAttackRange: 25
+  OppositionAttackRange: 23
   PlayerAttackCooldown: 2
   PlayerAnimator: {fileID: 402486692}
   NpcAnimator: {fileID: 990118173}
