@@ -55,23 +55,21 @@ public class HealthbarPlayer : MonoBehaviour
     //NPC angriber player funktion
     public void DamageOpposition()
     {
-            distanceToOther = Mathf.Abs((AI.position - player.position).magnitude);
-            time = time + Time.deltaTime;
-            if (distanceToOther < OppositionAttackRange)
+        distanceToOther = Mathf.Abs((AI.position - player.position).magnitude);
+        time = time + Time.deltaTime;
+        if (distanceToOther < OppositionAttackRange)
+        {
+            NpcAnimator.SetBool("Attack", false);
+            if (time >= AttackFrekvens)
             {
-
-                NpcAnimator.SetBool("Attack", false);
-
-                if (time >= AttackFrekvens)
-                {
-                    time = 0.0f;
-                    currentHealth = currentHealth - damage;
-                    healthbar.SetHealth(currentHealth);
-                    AI.GetComponent<NavMeshAgent>().speed = 0;
-                    NpcAnimator.SetBool("Attack", true);
-                }
-
+                time = 0.0f;
+                currentHealth = currentHealth - damage;
+                healthbar.SetHealth(currentHealth);
+                AI.GetComponent<NavMeshAgent>().speed = 0;
+                NpcAnimator.SetBool("Attack", true);
             }
+
+        }
     }
 
 

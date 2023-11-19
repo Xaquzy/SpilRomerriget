@@ -1456,7 +1456,6 @@ MonoBehaviour:
   PlayerAnimator: {fileID: 402486692}
   walkSpeed: 10
   sprintSpeed: 20
-  trueSpeed: 0
   jumpHeight: 10
   gravity: -2
 --- !u!143 &402486695

@@ -13,7 +13,7 @@ public class POVchange : MonoBehaviour
     }
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.P))
+        if (Input.GetKeyDown(KeyCode.F5))
         {
             FirstCamera.SetActive(!FirstCamera.activeSelf);
             ThirdCamera.SetActive(!ThirdCamera.activeSelf);

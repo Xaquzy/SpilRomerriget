@@ -17,7 +17,7 @@ public class Movement : MonoBehaviour
     Vector2 movement;
     public float walkSpeed = 4;
     public float sprintSpeed = 6;
-    public float trueSpeed;
+    float trueSpeed;
 
     //Jumping
     public float jumpHeight = 1;
